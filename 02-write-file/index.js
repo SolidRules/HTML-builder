@@ -19,4 +19,4 @@ stdin.on('data', data => {
 
 //Вывод прощального сообщения в консоль
 process.on('SIGINT', () => process.exit());
-process.on('exit', () => stdout.write('Работа закончена. До встречи!'));
+process.on('exit', () => stdout.write('Работа закончена. До встречи!'));git 
