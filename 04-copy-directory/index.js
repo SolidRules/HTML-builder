@@ -16,7 +16,7 @@ async function copyDir() {
     for (let file of sourceFileList) {
         const sourceFilePath = path.join(sourceDirPath, file);
         const targetFilePath = path.join(targetDirPath, file);
-        const input = await fs.createReadStream(sourceFilePath, 'utf-8');
+        const input = await fs.createReadStream(sourceFilePath);
         const output = await fs.createWriteStream(targetFilePath);
         input.pipe(output);
     }

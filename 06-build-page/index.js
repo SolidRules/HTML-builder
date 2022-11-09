@@ -65,16 +65,11 @@ fsPromis.writeFile(path.join(__dirname, 'project-dist', 'index.html'), template,
             console.log(file)
         const sourceFilePath = path.join(sourceDirPath, dir, file);
         const targetFilePath = path.join(targetDirPath, dir, file);
-        const input = await fs.createReadStream(sourceFilePath, 'utf-8');
+        const input = await fs.createReadStream(sourceFilePath);
         const output = await fs.createWriteStream(targetFilePath);
         input.pipe(output);
         }
     }
 }
 
-/* for (let file of targetFileList) {
-    const targetFilePath = path.join(targetDirPath, file);
-    fsPromis.unlink(targetFilePath);
-}
- */
 buildPage();
